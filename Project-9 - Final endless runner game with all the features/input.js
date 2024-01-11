@@ -3,26 +3,27 @@ export class InputHandler {
     this.game = game;
     this.keys = [];
     window.addEventListener("keydown", (e) => {
-      if (
-        (e.key === "ArrowDown" ||
-          e.key === "ArrowUp" ||
-          e.key === "ArrowLeft" ||
-          e.key === "ArrowRight" ||
-          e.key === "Enter") &&
-        this.keys.indexOf(e.key) === -1
+      if (e.code === "Enter" && this.game.gameOver) this.game.restartGame();
+      else if (
+        (e.code === "ArrowDown" ||
+          e.code === "ArrowUp" ||
+          e.code === "ArrowLeft" ||
+          e.code === "ArrowRight" ||
+          e.code === "Space") &&
+        this.keys.indexOf(e.code) === -1
       ) {
-        this.keys.push(e.key);
-      } else if (e.key === "d") this.game.debug = !this.game.debug;
+        this.keys.push(e.code);
+      } else if (e.code === "d") this.game.debug = !this.game.debug;
     });
     window.addEventListener("keyup", (e) => {
       if (
-        e.key === "ArrowDown" ||
-        e.key === "ArrowUp" ||
-        e.key === "ArrowLeft" ||
-        e.key === "ArrowRight" ||
-        e.key === "Enter"
+        e.code === "ArrowDown" ||
+        e.code === "ArrowUp" ||
+        e.code === "ArrowLeft" ||
+        e.code === "ArrowRight" ||
+        e.code === "Space"
       ) {
-        this.keys.splice(this.keys.indexOf(e.key), 1);
+        this.keys.splice(this.keys.indexOf(e.code), 1);
       }
     });
   }

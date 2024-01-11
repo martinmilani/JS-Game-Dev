@@ -7,8 +7,6 @@ class Layer {
     this.y = 0;
     this.speedModifier = speedModifier;
     this.image = image;
-    this.x = 0;
-    this.y = 0;
   }
   update() {
     if (this.x <= -this.width) this.x = 0;
@@ -84,5 +82,8 @@ export class Background {
   }
   draw(context) {
     this.backgroubndLayers.forEach((layer) => layer.draw(context));
+  }
+  restart() {
+    this.x = 0;
   }
 }

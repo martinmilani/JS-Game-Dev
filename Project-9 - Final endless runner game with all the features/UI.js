@@ -3,6 +3,7 @@ export class UI {
     this.game = game;
     this.fontSize = 34;
     this.fontFamily = "Bahianita";
+    this.livesImage = document.getElementById("lives");
   }
   draw(context) {
     context.save();
@@ -18,6 +19,11 @@ export class UI {
     // timer
     context.font = this.fontSize * 0.8 + "px " + this.fontFamily;
     context.fillText("Time: " + (this.game.time * 0.001).toFixed(1), 15, 70);
+    //lives
+    for (let i = 0; i < this.game.lives; i++) {
+      context.drawImage(this.livesImage, 20 * i + 16, 85, 16, 15);
+    }
+
     //game over messages
     if (this.game.gameOver) {
       context.textAlign = "center";
