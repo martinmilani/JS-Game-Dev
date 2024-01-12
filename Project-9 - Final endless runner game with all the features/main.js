@@ -4,7 +4,7 @@ import { Background } from "./background.js";
 import { FlyingEnemy, GroundEnemy, ClimbingEnemy } from "./enemies.js";
 import { UI } from "./UI.js";
 
-window.addEventListener("load", () => {
+window.addEventListener("load", function () {
   const canvas = document.getElementById("canvas1");
   const ctx = canvas.getContext("2d");
   canvas.width = 900;
