@@ -38,6 +38,8 @@ export class Player {
       new Hit(this.game),
     ];
     this.currentState = null;
+    this.soundPoint = new Audio("./assets/point.wav");
+    this.soundHit = new Audio("./assets/hit.wav");
   }
   update(input, deltaTime) {
     this.checkCollision();
@@ -117,11 +119,13 @@ export class Player {
           this.currentState === this.states[4] ||
           this.currentState === this.states[5]
         ) {
+          this.soundPoint.play();
           this.game.score++;
           this.game.floatingMessages.push(
             new FloatingMessage("+1", enemy.x, enemy.y, 100, 30)
           );
         } else {
+          this.soundHit.play();
           this.setState(6, 0);
           this.game.lives--;
           if (this.game.lives <= 0) {

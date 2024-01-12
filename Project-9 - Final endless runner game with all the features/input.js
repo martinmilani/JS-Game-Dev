@@ -3,7 +3,9 @@ export class InputHandler {
     this.game = game;
     this.keys = [];
     window.addEventListener("keydown", (e) => {
-      if (e.code === "Enter" && this.game.gameOver) this.game.restartGame();
+      if (e.code === "Enter" && this.game.paused) this, game.start();
+      else if (e.code === "Enter" && this.game.gameOver)
+        this.game.restartGame();
       else if (
         (e.code === "ArrowDown" ||
           e.code === "ArrowUp" ||

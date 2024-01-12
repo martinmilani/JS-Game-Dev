@@ -17,24 +17,39 @@ export class UI {
     // score
     context.fillText("Score: " + this.game.score, 15, 40);
     // timer
-    context.font = this.fontSize * 0.8 + "px " + this.fontFamily;
-    context.fillText("Time: " + (this.game.time * 0.001).toFixed(1), 15, 70);
+    // context.font = this.fontSize * 0.8 + "px " + this.fontFamily;
+    // context.fillText("Time: " + (this.game.time * 0.001).toFixed(1), 15, 70);
     //lives
     for (let i = 0; i < this.game.lives; i++) {
-      context.drawImage(this.livesImage, 20 * i + 16, 85, 16, 15);
+      context.drawImage(this.livesImage, 20 * i + 16, 60, 16, 15);
+    }
+    //start game
+    if (this.game.paused) {
+      context.textAlign = "center";
+      context.font = this.fontSize * 2 + "px " + this.fontFamily;
+      context.fillText(
+        "Press Enter to play the game",
+        this.game.width * 0.5,
+        this.game.height * 0.5 - 150
+      );
     }
 
     //game over messages
-    if (this.game.gameOver) {
+    else if (this.game.gameOver) {
       context.textAlign = "center";
       context.font = this.fontSize * 2 + "px " + this.fontFamily;
-      if (this.game.score > this.game.winningScore) {
+      if (this.game.score >= this.game.winningScore) {
         context.fillText(
           "You win!",
           this.game.width * 0.5,
           this.game.height * 0.5 - 20
         );
         context.font = this.fontSize * 0.7 + "px " + this.fontFamily;
+        context.fillText(
+          "Press Enter to play again",
+          this.game.width * 0.5,
+          this.game.height * 0.5 + 20
+        );
       } else {
         context.fillText(
           "Game over!",
@@ -42,12 +57,12 @@ export class UI {
           this.game.height * 0.5 - 20
         );
         context.font = this.fontSize * 0.7 + "px " + this.fontFamily;
+        context.fillText(
+          "Press Enter to play again",
+          this.game.width * 0.5,
+          this.game.height * 0.5 + 20
+        );
       }
-      context.fillText(
-        "Press Enter to play again",
-        this.game.width * 0.5,
-        this.game.height * 0.5 + 20
-      );
     }
     context.restore();
   }

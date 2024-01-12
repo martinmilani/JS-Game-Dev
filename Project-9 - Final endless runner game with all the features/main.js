@@ -15,7 +15,7 @@ window.addEventListener("load", () => {
       this.width = width;
       this.height = height;
       this.groundMargin = 50;
-      this.speed = 0;
+      this.speed = 3;
       this.maxSpeed = 3;
       this.background = new Background(this);
       this.player = new Player(this);
@@ -29,18 +29,19 @@ window.addEventListener("load", () => {
       this.enemyInterval = 1000;
       this.debug = false;
       this.score = 0;
-      this.player.currentState = this.player.states[0];
+      this.player.currentState = this.player.states[1];
       this.player.currentState.enter();
       this.maxParticles = 50;
       this.time = 0;
-      this.maxTime = 50000;
+      this.maxTime = 3000;
       this.gameOver = false;
       this.winningScore = 40;
-      this.lives = 5;
+      this.lives = 3;
+      this.paused = true;
     }
     update(deltaTime) {
       this.time += deltaTime;
-      if (this.time > this.maxTime) this.gameOver = true;
+      if (this.score >= this.winningScore) this.gameOver = true;
       this, this.background.update();
       this.player.update(this.input.keys, deltaTime);
       //handleEnemies
@@ -81,19 +82,21 @@ window.addEventListener("load", () => {
     }
     draw(context) {
       this.background.draw(context);
-      this.player.draw(context);
-      this.enemies.forEach((enemy) => {
-        enemy.draw(context);
-      });
-      this.particles.forEach((particle) => {
-        particle.draw(context);
-      });
-      this.collisions.forEach((collisions) => {
-        collisions.draw(context);
-      });
-      this.floatingMessages.forEach((message) => {
-        message.draw(context);
-      });
+      if (!this.paused) {
+        this.player.draw(context);
+        this.enemies.forEach((enemy) => {
+          enemy.draw(context);
+        });
+        this.particles.forEach((particle) => {
+          particle.draw(context);
+        });
+        this.collisions.forEach((collisions) => {
+          collisions.draw(context);
+        });
+        this.floatingMessages.forEach((message) => {
+          message.draw(context);
+        });
+      }
       this.UI.draw(context);
     }
     addEnemy() {
@@ -101,6 +104,11 @@ window.addEventListener("load", () => {
         this.enemies.push(new GroundEnemy(this));
       else if (this.speed > 0) this.enemies.push(new ClimbingEnemy(this));
       this.enemies.push(new FlyingEnemy(this));
+    }
+    start() {
+      this.paused = false;
+      this.gameOver = false;
+      animate(0);
     }
     restartGame() {
       this.player.restart();
@@ -112,7 +120,8 @@ window.addEventListener("load", () => {
       this.enemyTimer = 0;
       this.debug = false;
       this.score = 0;
-      this.player.currentState = this.player.states[0];
+      this.speed = 3;
+      this.player.currentState = this.player.states[1];
       this.player.currentState.enter();
       this.time = 0;
       this.gameOver = false;
@@ -129,7 +138,7 @@ window.addEventListener("load", () => {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     game.update(deltaTime);
     game.draw(ctx);
-    if (!game.gameOver) requestAnimationFrame(animate);
+    if (!game.gameOver && !game.paused) requestAnimationFrame(animate);
   }
 
   animate(0);
