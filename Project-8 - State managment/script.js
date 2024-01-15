@@ -7,8 +7,8 @@ window.addEventListener("load", () => {
   loading.style.display = "none";
   const canvas = document.getElementById("canvas1");
   const ctx = canvas.getContext("2d");
-  canvas.width = window.innerWidth;
-  canvas.height = window.innerHeight;
+  canvas.width = window.innerWidth * 0.5;
+  canvas.height = window.innerHeight * 0.7;
 
   const player = new Player(canvas.width, canvas.height);
 
