@@ -1,4 +1,4 @@
-let playerState = "run";
+let playerState = "idle";
 const dropDown = document.getElementById("animations");
 dropDown.addEventListener("change", function (e) {
   playerState = e.target.value;
@@ -72,7 +72,7 @@ animationStates.forEach((state, index) => {
   }
   spriteAnimations[state.name] = frames;
 });
-console.log(spriteAnimations);
+
 function animate() {
   ctx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
   let position =
