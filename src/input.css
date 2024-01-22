@@ -3,15 +3,3 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-@layer components {
-  .card {
-    @apply h-[200px]  bg-white shadow-lg place-content-center rounded-lg text-white font-bold text-4xl transition ease-in-out hover:-translate-y-1 hover:scale-110 duration-300;
-  }
-  .image {
-    @apply p-3 h-[138px] w-[156px];
-  }
-  .title {
-    @apply font-body tracking-wider font-semibold text-center text-base text-gray-900 p-2;
-  }
-}
