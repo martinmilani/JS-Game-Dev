@@ -10,6 +10,7 @@ body {
   justify-content: center;
   align-items: center;
   gap: 8px;
+  background-color: #111827;
 }
 #canvas1,
 #canvas2,
@@ -19,4 +20,5 @@ body {
   border-radius: 12px;
   height: 850px;
   width: 450px;
+  background-color: lightgray;
 }
