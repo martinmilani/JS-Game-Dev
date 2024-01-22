@@ -4,7 +4,7 @@
   box-sizing: border-box;
 }
 body {
-  background: black;
+  background: #111827;
 }
 #canvas1 {
   position: absolute;

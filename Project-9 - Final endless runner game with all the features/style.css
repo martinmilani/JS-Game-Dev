@@ -4,12 +4,17 @@
   box-sizing: border-box;
 }
 
+body {
+  background-color: #111827;
+}
+
 h1 {
   font-family: "Bahianita", sans-serif;
   font-size: 4rem;
   width: 100%;
   text-align: center;
   margin: 0.5em 0;
+  color: white;
 }
 h2 {
   font-family: "Bahianita", sans-serif;
