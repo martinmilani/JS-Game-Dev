@@ -7,126 +7,97 @@
     <link rel="stylesheet" href="/style.css" />
   </head>
   <body>
-    <!-- <div class="hero min-h-screen">
-      <video autoplay muted loop class="absolute top-0 left-0 -z-10 w-full h-full object-fill">
-        <source src="assets/game-background.webm" type="video/webm">
-      </video>
-      <div class="hero-overlay bg-opacity-60"></div>
-      <div class="hero-content text-center text-white">
-        <div class="max-w-md">
-          <h1 class="mb-5 text-[4rem] font-bold leading-tight">JavaScript Game Development</h1>
-          <p class="mb-5 text-lg">2D games with HTML, CSS & plain vanilla JavaScript, no frameworks
-            and no libraries! From sprite animation to state management.</p>
-          <a role="button" class="btn btn-primary text-3xl font-bold px-8 text-white">Play</a>
-        </div>
-      </div>
-    </div> -->
-    <div class="hero min-h-[600px] bg-base-100">
+    <!-- <div class="hero min-h-[600px] bg-base-100">
       <div class="hero-content flex-col lg:flex-row-reverse p-0">
         <video autoplay muted loop class="rounded-xl w-1/2 opacity-75">
-          <source src="assets/game-background.webm" type="video/webm">
+          <source src="assets/game-background.webm" type="video/webm" />
         </video>
         <div>
           <h1 class="text-5xl font-bold">JavaScript Game Development!</h1>
-          <p class="py-6 pr-4 text-md">2D games with HTML, CSS & plain vanilla JavaScript, no frameworks
-            and no libraries! From sprite animation to state management.</p>
+          <p class="py-6 pr-4 text-md">
+            2D games with HTML, CSS & plain vanilla JavaScript, no frameworks
+            and no libraries! From sprite animation to state management.
+          </p>
+        </div>
+      </div>
+    </div> -->
+    <div class="hero bg-base-100 pt-8">
+      <div class="hero-content text-center">
+        <div class="max-w-md">
+          <h1 class="text-5xl font-bold">JavaScript Game Development!</h1>
+          <p class="py-6">
+            2D games with HTML, CSS & plain vanilla JavaScript, no frameworks
+            and no libraries! From sprite animation to state management.
+          </p>
         </div>
       </div>
     </div>
     <div class="container max-w-[1280px] mx-auto">
-      <section class="flex justify-between flex-wrap gap-8 mt-4">
-        <div class="card w-96 bg-primary text-primary-content">
-          <div class="card-img"></div>
-          <div class="card-body">
+      <section class="flex flex-wrap justify-center gap-6 mt-4">
+        <a
+          href="Project-1 - Sprite Animations/index.html"
+          class="card w-96 bg-base-300 shadow-xl col-span-4"
+        >
+          <figure class="px-10 pt-10">
+            <img
+              src="assets/sprite-animations.gif"
+              alt="dog"
+              class="rounded-xl h-[300px] w-[300px]"
+            />
+          </figure>
+          <div class="card-body items-center text-center">
             <h2 class="card-title">Project 1</h2>
-            <p class="h-[48px]">Vanilla JavaScript sprite animation techniques</p>
-            <div class="card-actions justify-end">
-              <button class="btn">
-                <a href="/Project-1 - Sprite Animations/index.html">Link</a>
-            </div>
+            <p>Vanilla JavaScript sprite animation techniques</p>
           </div>
-        </div>
-        <div class="card w-96 bg-primary text-primary-content">
-          <div class="card-body">
+        </a>
+        <a
+          href="Project-2 - Parallax Backgrounds/index.html"
+          class="card w-96 bg-base-300 shadow-xl col-span-4"
+        >
+          <figure class="px-10 pt-10">
+            <img
+              src="assets/parallax-background.gif"
+              alt="background"
+              class="rounded-xl h-[300px] w-[300px]"
+            />
+          </figure>
+          <div class="card-body items-center text-center">
             <h2 class="card-title">Project 2</h2>
-            <p class="h-[48px]">Parallax backgrounds with JavaScript</p>
-            <div class="card-actions justify-end">
-              <button class="btn">
-                <a href="/Project-2 - Parallax Backgrounds/index.html">Link</a>
-            </div>
+            <p>Parallax backgrounds with JavaScript</p>
           </div>
-        </div>
-        <div class="card w-96 bg-primary text-primary-content">
-          <div class="card-body">
+        </a>
+        <a
+          href="Project-3 - NPC movment animations/index.html"
+          class="card w-96 bg-base-300 shadow-xl col-span-4"
+        >
+          <figure class="px-10 pt-10">
+            <img
+              src="assets/npc-movment-animations.gif"
+              alt="background"
+              class="rounded-xl h-[300px] w-[300px] object-cover"
+            />
+          </figure>
+          <div class="card-body items-center text-center">
             <h2 class="card-title">Project 3</h2>
-            <p class="h-[48px]">Enemy movement patterns</p>
-            <div class="card-actions justify-end">
-              <button class="btn">
-                <a href="/Project-3 - NPC movment animations/index.html">Link</a>
-            </div>
+            <p>Enemy movement patterns</p>
           </div>
-        </div>
-        <!-- <div class="card w-96 bg-primary text-primary-content">
-          <div class="card-body">
+        </a>
+        <a
+          href="Project-4 - Collision detection/index.html"
+          class="card w-96 bg-base-300 shadow-xl col-span-4"
+        >
+          <figure class="px-10 pt-10">
+            <img
+              src="assets/animations-on-trigger.gif"
+              alt="background"
+              class="rounded-xl h-[300px] w-[300px] object-cover"
+            />
+          </figure>
+          <div class="card-body items-center text-center">
             <h2 class="card-title">Project 4</h2>
-            <p class="h-[48px]">Collision animations from a sprite sheet</p>
-            <div class="card-actions justify-end">
-              <button class="btn">
-                <a href="/Project-4 - Collision detection/index.html">Link</a>
-            </div>
+            <p>Collision animations from a sprite sheet</p>
           </div>
-        </div>
-        <div class="card w-96 bg-primary text-primary-content">
-          <div class="card-body">
-            <h2 class="card-title">Project 5</h2>
-            <p class="h-[48px]">Point & shoot game</p>
-            <div class="card-actions justify-end">
-              <button class="btn">
-                <a href="/Project-5 - Point and shoot game/index.html">Link</a>
-            </div>
-          </div>
-        </div>
-        <div class="card w-96 bg-primary text-primary-content">
-          <div class="card-body">
-            <h2 class="card-title">Project 6</h2>
-            <p class="h-[48px]">Enemy variety in JavaScript games</p>
-            <div class="card-actions justify-end">
-              <button class="btn">
-                <a href="/Project-6 - Enemy variety/index.html">Link</a>
-            </div>
-          </div>
-        </div>
-        <div class="card w-96 bg-primary text-primary-content">
-          <div class="card-body">
-            <h2 class="card-title">Project 7</h2>
-            <p class="h-[48px]">Side-scroller game with mobile support</p>
-            <div class="card-actions justify-end">
-              <button class="btn">
-                <a href="/Project-7 - Side-scroller game/index.html">Link</a>
-            </div>
-          </div>
-        </div>
-        <div class="card w-96 bg-primary text-primary-content">
-          <div class="card-body">
-            <h2 class="card-title">Project 8</h2>
-            <p class="h-[48px]">State management in JavaScript games</p>
-            <div class="card-actions justify-end">
-              <button class="btn">
-                <a href="/Project-8 - State managment/index.html">Link</a>
-            </div>
-          </div>
-        </div>
-        <div class="card w-96 bg-primary text-primary-content">
-          <div class="card-body">
-            <h2 class="card-title">Project 9</h2>
-            <p class="h-[48px]">Final endless runner game with all the features </p>
-            <div class="card-actions justify-end">
-              <button class="btn">
-                <a href="/Project-9 - Final endless runner game with all the features/index.html">Link</a>
-            </div>
-          </div>
-        </div> -->
-       
+        </a>
       </section>
     </div>
   </body>
